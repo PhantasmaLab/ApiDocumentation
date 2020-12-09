@@ -62,8 +62,10 @@ definitions:
         type: string
         format: "uuid"
       Message:
-        type: object
-        $ref: "#/definitions/NewPedestrian"
+        type: array
+        items:
+          type: object
+          $ref: "#/definitions/NewPedestrian"
       Timestamp:
         type: string
         format: "date-time"
@@ -75,8 +77,10 @@ definitions:
         type: string
         format: "uuid"
       Message:
-        type: object
-        $ref: "#/definitions/NewCar"
+        type: array
+        items:
+          type: object
+          $ref: "#/definitions/NewCar"
       Timestamp:
         type: string
         format: "date-time"
@@ -85,7 +89,7 @@ definitions:
     properties:
       Time:
         type: integer
-        format: "double"
+        format: "float"
       PedID:
         type: string
         format: string
@@ -102,69 +106,103 @@ definitions:
         type: string
       PosX:
         type: integer
-        format: "double"
+        format: "float"
       PosY:
         type: integer
-        format: "double"
+        format: "float"
       PosZ:
         type: integer
-        format: "double"
+        format: "float"
       VelX:
         type: integer
-        format: "double"
+        format: "float"
       VelY:
         type: integer
-        format: "double"
+        format: "float"
       VelZ:
         type: integer
-        format: "double"
+        format: "float"
       RotPitch:
         type: integer
-        format: "double"
+        format: "float"
       RotRoll:
         type: integer
-        format: "double"
+        format: "float"
       RotYaw:
         type: integer
-        format: "double"
+        format: "float"
       Respawned:
         type: boolean
-      Teleported:
+      Fitness:
+        type: integer
+        format: "float"
+      Deaths:
+        type: integer
+        format: "int32"
+      KeyPressedForward:
         type: boolean
-
+      KeyPressedBack:
+        type: boolean
+      KeyPressedLeft:
+        type: boolean
+      KeyPressedRight:
+        type: boolean
+      HeadAngle:
+        type: integer
+        format: "float"
+      MouseX:
+        type: integer
+        format: "float"
+      MouseY:
+        type: integer
+        format: "float"
+      TrafficLights:
+        type: string
+        enum:
+          - Red
+          - Green
+          - Yellow
+          - N/A
   NewCar:
     type: object
     properties:
       Time:
         type: integer
-        format: "double"
+        format: "float"
       CarID:
         type: string
         format: string
       PosX:
         type: integer
-        format: "double"
+        format: "float"
       PosY:
         type: integer
-        format: "double"
+        format: "float"
       PosZ:
         type: integer
-        format: "double"
+        format: "float"
       VelX:
         type: integer
-        format: "double"
+        format: "float"
       VelY:
         type: integer
-        format: "double"
+        format: "float"
       VelZ:
         type: integer
-        format: "double"
+        format: "float"
       RotPitch:
         type: integer
-        format: "double"
+        format: "float"
       RotRoll:
         type: integer
-        format: "double"
+        format: "float"
       RotYaw:
         type: integer
-        format: "double"
+        format: "float"
+      TrafficLights:
+        type: string
+        enum:
+          - Red
+          - Green
+          - Yellow
+          - N/A
